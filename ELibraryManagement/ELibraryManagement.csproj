@@ -68,10 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BootStrap\css\bootstrap.min.css" />
-    <Content Include="BootStrap\js\bootstrap.bundle.min.js" />
     <Content Include="BootStrap\js\bootstrap.min.js" />
+    <Content Include="BootStrap\js\jquery-3.2.1.slim.min.js" />
     <Content Include="BootStrap\js\popper.min.js" />
-    <Content Include="DataTables\css\dataTables.dataTables.min.css" />
+    <Content Include="DataTables\css\jquery.dataTables.min.css" />
     <Content Include="DataTables\js\dataTables.min.js" />
     <Content Include="FontAwesome\css\all.css" />
     <Content Include="FontAwesome\css\all.min.css" />
@@ -5726,6 +5726,7 @@
     <Content Include="FontAwesome\svgs\solid\yin-yang.svg" />
     <Content Include="FontAwesome\svgs\solid\z.svg" />
     <Content Include="FontAwesome\svgs\solid\zap.svg" />
+    <Content Include="imgs\books.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

@@ -1,27 +1,48 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="ELibraryManagement.Site1" %>
 
 <!DOCTYPE html>
-
+ <%-- --%>
 <html>
 <head runat="server">
     <title></title>
 
     <%--importing Files --%>
+
+    <%-- CSS IM{PORTING--%>
     <link href="BootStrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="DataTables/css/dataTables.dataTables.min.css" rel="stylesheet" />
+    <link href="DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="FontAwesome/css/all.css" rel="stylesheet" />
 
+     <%--JS IMPORTING  --%>
+    <script src="BootStrap/js/jquery-3.2.1.slim.min.js"></script>
+    <script src="BootStrap/js/popper.min.js"></script>
+    <script src="BootStrap/js/bootstrap.min.js"></script>
 
-     <%--Comment syntax--%>
+
+
+
+
+     <%--Comment syntax
     <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+    </asp:ContentPlaceHolder>--%>
 </head>
 <body>
     <form id="form1" runat="server">
+
         <div>
             
+            <nav class="navbar navbar-expand-lg navbar-light">
 
+                <a class="navbar-brand" href="#">
+                    <img src="imgs/books" width="30" height="30" />
+                    ELibrary
+                </a>
+
+
+            </nav>
+        
         </div>
+    
     </form>
 </body>
 </html>
