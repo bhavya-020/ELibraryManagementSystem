@@ -29,26 +29,44 @@
 
 
 
-     <%--Comment syntax
+     <%--Comment syntax--%>
     <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>--%>
+    </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
 
-        <div>
-            
+
+         <%--for Fixed LoGO --%>
+
+        <div>    
             <nav class="navbar navbar-expand-lg navbar-light">
 
                 <a class="navbar-brand" href="#">
-                    <img src="imgs/books" width="30" height="30" />
+                    <img src="imgs/books.jpg" width="30" height="30" />
                     ELibrary
                 </a>
 
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+                    aria-expanded="false" aria-label="Toggle-navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
             </nav>
-        
         </div>
+
+
+
+         <%-- For Main Content--%>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        
+
+        <footer>
+            <p>&copy All right reserved <a class="footerLinks" href="#" target="_blank">Simplecode </a></p>
+        </footer>
     
     </form>
 </body>
