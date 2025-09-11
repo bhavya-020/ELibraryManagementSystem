@@ -1,7 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="ELibraryManagement.Site1" %>
 
 <!DOCTYPE html>
- <%-- --%>
+<%-- --%>
 <html>
 <head runat="server">
     <title></title>
@@ -13,15 +13,18 @@
     <link href="DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="FontAwesome/css/all.css" rel="stylesheet" />
 
-     <%--JS IMPORTING  --%>
+    <%-- CSS Custom Sytle Sheet--%>
+
+    <link href="css/CustomStyleSheet.css" rel="stylesheet" />
+    <%--JS IMPORTING  --%>
     <script src="BootStrap/js/jquery-3.2.1.slim.min.js"></script>
     <script src="BootStrap/js/popper.min.js"></script>
     <script src="BootStrap/js/bootstrap.min.js"></script>
 
 
 
-     <%-- some changes happeing --%>
- <%--chaning from github page --%>
+    <%-- some changes happeing --%>
+    <%--chaning from github page --%>
 
 
 
@@ -29,7 +32,7 @@
 
 
 
-     <%--Comment syntax--%>
+    <%--Comment syntax--%>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -37,9 +40,9 @@
     <form id="form1" runat="server">
 
 
-         <%--for Fixed LoGO --%>
+        <%--for Fixed LoGO --%>
 
-        <div>    
+        <div>
             <nav class="navbar navbar-expand-lg navbar-light">
 
                 <a class="navbar-brand" href="#">
@@ -47,27 +50,130 @@
                     ELibrary
                 </a>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle-navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active ">
+                            <a class="nav-link" href="#">Home </a>
+                        </li>
+                        <li class="nav-item active  ">
+                            <a class="nav-link" href="#">About Us </a>
+                        </li>
+                        <li class="nav-item active ">
+                            <a class="nav-link" href="#">Carrers</a>
+                        </li>
+                        <li class="nav-item active ">
+                            <a class="nav-link disabled" href="#">Disabled</a>
+                        </li>
+                    </ul>
+
+
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <asp:LinkButton ID="lnkViewBooks" runat="server" CssClass="nav-link">View Books</asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton ID="lnkUserLogin" runat="server" CssClass="nav-link">User Login</asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton ID="lnkSignUp" runat="server" CssClass="nav-link">Sign Up</asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton ID="lnkLogout" runat="server" CssClass="nav-link">Logout</asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
+                            <asp:Label ID="lblHelloUser" runat="server" CssClass="nav-link" Text="Hello, User!"></asp:Label>
+                        </li>
+                    </ul>
+
+                </div>
 
             </nav>
         </div>
 
 
 
-         <%-- For Main Content--%>
+        <%-- For Main Content--%>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
-        
 
-        <footer>
-            <p>&copy All right reserved <a class="footerLinks" href="#" target="_blank">Simplecode </a></p>
-        </footer>
-    
+        <footer class="footer bg-dark text-white pt-4 mt-5">
+    <div class="container">
+        <div class="row">
+            
+            <!-- About -->
+            <div class="col-md-3 mb-3">
+                <h5>About Us</h5>
+                <p>
+                    ELibrary Management System helps users to manage books, track borrowing,
+                    and provide seamless access to digital resources.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-3 mb-3">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><asp:HyperLink ID="lnkHome" runat="server" NavigateUrl="~/Default.aspx" CssClass="text-white">Home</asp:HyperLink></li>
+                    <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/ViewBooks.aspx" CssClass="text-white">View Books</asp:HyperLink></li>
+                    <li><asp:HyperLink ID="lnkSignUpFooter" runat="server" NavigateUrl="~/Signup.aspx" CssClass="text-white">Sign Up</asp:HyperLink></li>
+                    <li><asp:HyperLink ID="lnkLoginFooter" runat="server" NavigateUrl="~/Login.aspx" CssClass="text-white">Login</asp:HyperLink></li>
+                </ul>
+            </div>
+
+            <!-- Management Links -->
+            <div class="col-md-3 mb-3">
+                <h5>Management</h5>
+                <ul class="list-unstyled">
+                    <%-- OnClick="lnkAdminLogin_Click"
+                        OnClick="lnkPublisherMgmt_Click"
+                        OnClick="lnkAuthorMgmt_Click"
+                        --%>
+
+                    <li>
+                        <asp:LinkButton ID="lnkAdminLogin" runat="server" CssClass="text-white" >Admin Login</asp:LinkButton>
+                    </li>
+                    <li>
+                        <asp:LinkButton ID="lnkPublisherMgmt" runat="server" CssClass="text-white" >Publisher Management</asp:LinkButton>
+                    </li>
+                    <li>
+                        <asp:LinkButton ID="lnkAuthorMgmt" runat="server" CssClass="text-white" >Author Management</asp:LinkButton>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Contact & Social Media -->
+            <div class="col-md-3 mb-3">
+                <h5>Contact Us</h5>
+                <p>Email: support@elibrary.com</p>
+                <p>Phone: +91-9876543210</p>
+                
+                <div>
+                    <a href="https://facebook.com" class="text-white me-3">Facebook</a><br />
+                    <a href="https://twitter.com" class="text-white me-3">Twitter</a><br />
+                    <a href="https://instagram.com" class="text-white">Instagram</a>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="bg-light" />
+
+        <div class="text-center pb-3">
+            <p class="mb-0">&copy; <%: DateTime.Now.Year %> ELibrary Management System. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
+
+
     </form>
 </body>
 </html>
