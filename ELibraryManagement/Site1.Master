@@ -13,10 +13,6 @@
     <link href="DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="FontAwesome/css/all.css" rel="stylesheet" />
 
-     <%--JS IMPORTING  --%>
-    <script src="BootStrap/js/jquery-3.2.1.slim.min.js"></script>
-    <script src="BootStrap/js/popper.min.js"></script>
-    <script src="BootStrap/js/bootstrap.min.js"></script>
 
 
 
