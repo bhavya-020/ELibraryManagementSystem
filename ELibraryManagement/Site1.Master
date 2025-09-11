@@ -10,7 +10,7 @@
     <link href="BootStrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="DataTables/css/dataTables.dataTables.min.css" rel="stylesheet" />
     <link href="FontAwesome/css/all.css" rel="stylesheet" />
-
+    
 
      <%--Comment syntax--%>
     <asp:ContentPlaceHolder ID="head" runat="server">
