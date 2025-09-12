@@ -103,73 +103,79 @@
             </asp:ContentPlaceHolder>
         </div>
 
+
+
         <footer class="footer bg-dark text-white pt-4 mt-5">
-    <div class="container">
-        <div class="row">
-            
-            <!-- About -->
-            <div class="col-md-3 mb-3">
-                <h5>About Us</h5>
-                <p>
-                    ELibrary Management System helps users to manage books, track borrowing,
+            <div class="container">
+                <div class="row">
+
+                    <!-- About -->
+                    <div class="col-md-3 mb-3">
+                        <h5>About Us</h5>
+                        <p>
+                            ELibrary Management System helps users to manage books, track borrowing,
                     and provide seamless access to digital resources.
-                </p>
-            </div>
+                        </p>
+                    </div>
 
-            <!-- Quick Links -->
-            <div class="col-md-3 mb-3">
-                <h5>Quick Links</h5>
-                <ul class="list-unstyled">
-                    <li><asp:HyperLink ID="lnkHome" runat="server" NavigateUrl="~/Default.aspx" CssClass="text-white">Home</asp:HyperLink></li>
-                    <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/ViewBooks.aspx" CssClass="text-white">View Books</asp:HyperLink></li>
-                    <li><asp:HyperLink ID="lnkSignUpFooter" runat="server" NavigateUrl="~/Signup.aspx" CssClass="text-white">Sign Up</asp:HyperLink></li>
-                    <li><asp:HyperLink ID="lnkLoginFooter" runat="server" NavigateUrl="~/Login.aspx" CssClass="text-white">Login</asp:HyperLink></li>
-                </ul>
-            </div>
+                    <!-- Quick Links -->
+                    <div class="col-md-3 mb-3">
+                        <h5>Quick Links</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <asp:HyperLink ID="lnkHome" runat="server" NavigateUrl="~/Default.aspx" CssClass="text-white">Home</asp:HyperLink></li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/ViewBooks.aspx" CssClass="text-white">View Books</asp:HyperLink></li>
+                            <li>
+                                <asp:HyperLink ID="lnkSignUpFooter" runat="server" NavigateUrl="~/Signup.aspx" CssClass="text-white">Sign Up</asp:HyperLink></li>
+                            <li>
+                                <asp:HyperLink ID="lnkLoginFooter" runat="server" NavigateUrl="~/Login.aspx" CssClass="text-white">Login</asp:HyperLink></li>
+                        </ul>
+                    </div>
 
-            <!-- Management Links -->
-            <div class="col-md-3 mb-3">
-                <h5>Management</h5>
-                <ul class="list-unstyled">
-                    <%-- OnClick="lnkAdminLogin_Click"
+                    <!-- Management Links -->
+                    <div class="col-md-3 mb-3">
+                        <h5>Management</h5>
+                        <ul class="list-unstyled">
+                            <%-- OnClick="lnkAdminLogin_Click"
                         OnClick="lnkPublisherMgmt_Click"
                         OnClick="lnkAuthorMgmt_Click"
-                        --%>
+                            --%>
 
-                    <li>
-                        <asp:LinkButton ID="lnkAdminLogin" runat="server" CssClass="text-white" >Admin Login</asp:LinkButton>
-                    </li>
-                    <li>
-                        <asp:LinkButton ID="lnkPublisherMgmt" runat="server" CssClass="text-white" >Publisher Management</asp:LinkButton>
-                    </li>
-                    <li>
-                        <asp:LinkButton ID="lnkAuthorMgmt" runat="server" CssClass="text-white" >Author Management</asp:LinkButton>
-                    </li>
-                </ul>
-            </div>
+                            <li>
+                                <asp:LinkButton ID="lnkAdminLogin" runat="server" CssClass="text-white">Admin Login</asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lnkPublisherMgmt" runat="server" CssClass="text-white">Publisher Management</asp:LinkButton>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lnkAuthorMgmt" runat="server" CssClass="text-white">Author Management</asp:LinkButton>
+                            </li>
+                        </ul>
+                    </div>
 
-            <!-- Contact & Social Media -->
-            <div class="col-md-3 mb-3">
-                <h5>Contact Us</h5>
-                <p>Email: support@elibrary.com</p>
-                <p>Phone: +91-9876543210</p>
-                
-                <div>
-                    <a href="https://facebook.com" class="text-white me-3">Facebook</a><br />
-                    <a href="https://twitter.com" class="text-white me-3">Twitter</a><br />
-                    <a href="https://instagram.com" class="text-white">Instagram</a>
+                    <!-- Contact & Social Media -->
+                    <div class="col-md-3 mb-3">
+                        <h5>Contact Us</h5>
+                        <p>Email: support@elibrary.com</p>
+                        <p>Phone: +91-9876543210</p>
+
+                        <div>
+                            <a href="https://facebook.com" class="text-white me-3">Facebook</a><br />
+                            <a href="https://twitter.com" class="text-white me-3">Twitter</a><br />
+                            <a href="https://instagram.com" class="text-white">Instagram</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <hr class="bg-light" />
+
+                <div class="text-center pb-3">
+                    <p class="mb-0">&copy; <%: DateTime.Now.Year %> ELibrary Management System. All Rights Reserved.</p>
                 </div>
             </div>
-
-        </div>
-
-        <hr class="bg-light" />
-
-        <div class="text-center pb-3">
-            <p class="mb-0">&copy; <%: DateTime.Now.Year %> ELibrary Management System. All Rights Reserved.</p>
-        </div>
-    </div>
-</footer>
+        </footer>
 
 
 
