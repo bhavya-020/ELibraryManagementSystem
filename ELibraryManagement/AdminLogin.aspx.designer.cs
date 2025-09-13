@@ -11,7 +11,7 @@ namespace ELibraryManagement
 {
 
 
-    public partial class userLogin
+    public partial class AdminLogin
     {
 
         /// <summary>
