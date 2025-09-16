@@ -72,7 +72,7 @@
                     </ul>
 
 
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav ms-auto">
                         <li class="nav-item active">
                             <asp:LinkButton ID="lnkViewBooks" runat="server" CssClass="nav-link">View Books</asp:LinkButton>
                         </li>
@@ -83,10 +83,10 @@
                             <asp:LinkButton ID="lnkSignUp" runat="server" CssClass="nav-link">Sign Up</asp:LinkButton>
                         </li>
                         <li class="nav-item">
-                            <asp:LinkButton ID="lnkLogout" runat="server" CssClass="nav-link">Logout</asp:LinkButton>
+                            <asp:LinkButton ID="lnkLogout" runat="server" CssClass="nav-link" Visible="False">Logout</asp:LinkButton>
                         </li>
                         <li class="nav-item">
-                            <asp:Label ID="lblHelloUser" runat="server" CssClass="nav-link" Text="Hello, User!"></asp:Label>
+                            <asp:Label ID="lblHelloUser" runat="server" CssClass="nav-link" Visible="False" Text="Hello, User!"></asp:Label>
                         </li>
                     </ul>
 
@@ -127,7 +127,7 @@
                             <li>
                                 <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/ViewBooks.aspx" CssClass="text-white">View Books</asp:HyperLink></li>
                             <li>
-                                <asp:HyperLink ID="lnkSignUpFooter" runat="server" NavigateUrl="~/Signup.aspx" CssClass="text-white">Sign Up</asp:HyperLink></li>
+                                <asp:HyperLink ID="lnkSignUpFooter" runat="server" NavigateUrl="~/UserSignup.aspx" CssClass="text-white">Sign Up</asp:HyperLink></li>
                             <li>
                                 <asp:HyperLink ID="lnkLoginFooter" runat="server" NavigateUrl="~/Login.aspx" CssClass="text-white">Login</asp:HyperLink></li>
                         </ul>
@@ -143,14 +143,26 @@
                             --%>
 
                             <li>
-                                <asp:LinkButton ID="lnkAdminLogin" runat="server" CssClass="text-white">Admin Login</asp:LinkButton>
+                                <asp:LinkButton ID="lnkAdminLogin" runat="server" CssClass="text-white" OnClick ="lnkAdminLogin_Click">Admin Login</asp:LinkButton>
                             </li>
                             <li>
-                                <asp:LinkButton ID="lnkPublisherMgmt" runat="server" CssClass="text-white">Publisher Management</asp:LinkButton>
+                                <asp:LinkButton ID="lnkPublisherMgmt" runat="server" CssClass="text-white" OnClick="lnkPublisherMgmt_Click" Visible="False" >Publisher Management </asp:LinkButton>
                             </li>
                             <li>
-                                <asp:LinkButton ID="lnkAuthorMgmt" runat="server" CssClass="text-white">Author Management</asp:LinkButton>
+                                <asp:LinkButton ID="lnkAuthorMgmt" runat="server" CssClass="text-white" OnClick ="lnkAuthorMgmt_Click" Visible="False">Author Management</asp:LinkButton>
                             </li>
+
+
+
+                            <li>
+    <asp:LinkButton ID="LinkButton1" runat="server" CssClass="text-white" OnClick ="LinkButton1_Click" Visible="False">Book Issue</asp:LinkButton>
+</li>
+<li>
+    <asp:LinkButton ID="LinkButton2" runat="server" CssClass="text-white" OnClick="LinkButton2_Click" Visible="False" >Book Inventory</asp:LinkButton>
+</li>
+<li>
+    <asp:LinkButton ID="LinkButton3" runat="server" CssClass="text-white" OnClick ="LinkButton3_Click" Visible="False">Member Management</asp:LinkButton>
+</li>
                         </ul>
                     </div>
 

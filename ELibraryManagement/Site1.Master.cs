@@ -13,5 +13,41 @@ namespace ELibraryManagement
         {
 
         }
+
+        protected void lnkAdminLogin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminLogin.aspx");
+        }
+
+        protected void lnkPublisherMgmt_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("adminpublisherManagement.aspx");
+
+        }
+
+        protected void lnkAuthorMgmt_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminAutherManagement.aspx");
+
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminBookIssue.aspx");
+
+
+        }
+
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminBookInventory.aspx");
+
+        }
+
+        protected void LinkButton3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminMemberManagement.aspx");
+
+        }
     }
 }

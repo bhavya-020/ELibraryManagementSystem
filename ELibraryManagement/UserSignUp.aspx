@@ -74,7 +74,7 @@
 
                         <!-- Signup Button -->
                         <div class="d-grid">
-                            <asp:Button ID="btnSignup" runat="server" CssClass="btn btn-success btn-block" Text="Sign Up" />
+                            <asp:Button ID="btnSignup" runat="server" CssClass="btn btn-success btn-block" Text="Sign Up" OnClick="btnSignup_Click" />
                         </div>
 
                         <!-- Message Label -->

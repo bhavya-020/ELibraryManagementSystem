@@ -13,5 +13,11 @@ namespace ELibraryManagement
         {
 
         }
+
+        protected void btnSignup_Click(object sender, EventArgs e)
+        {
+            Response.Write("<script>alert('testing');</script>");
+
+        }
     }
 }
