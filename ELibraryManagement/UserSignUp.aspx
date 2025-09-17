@@ -62,13 +62,15 @@
 
                         <!-- Password + Confirm Password -->
                         <div class="row mb-3">
+                            
+                            <div class="col-md-6">
+                                <label for="member_id">member_id</label>
+                                <asp:TextBox ID="member_id" runat="server" CssClass="form-control" placeholder="member_id" ></asp:TextBox>
+                            </div>
+                            
                             <div class="col-md-6">
                                 <label for="txtPassword">Password</label>
                                 <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" placeholder="Enter password" TextMode="Password"></asp:TextBox>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="txtConfirmPassword">Confirm Password</label>
-                                <asp:TextBox ID="txtConfirmPassword" runat="server" CssClass="form-control" placeholder="Confirm password" TextMode="Password"></asp:TextBox>
                             </div>
                         </div>
 
