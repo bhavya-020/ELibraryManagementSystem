@@ -11,7 +11,70 @@ namespace ELibraryManagement
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                if (Session["role"].Equals(""))
+                {
 
+                    lnkUserLogin.Visible = true; //USERLOGIN
+                    lnkSignUp.Visible = true;      //SignUP
+                    lnkLogout.Visible = false;      //LOGOUT
+                    lblHelloUser.Visible = false;     //HElloUser
+
+
+                    lnkAdminLogin.Visible = true;     //ADMIN LOGIN
+
+                    lnkPublisherMgmt.Visible = false;     //PublisherMgm
+                    lnkAuthorMgmt.Visible = false;     //lnkAuthorMgmt
+                    LinkButton1.Visible = false;     //Book Issue
+                    LinkButton2.Visible = false;     //Book Inventory
+                    LinkButton3.Visible = false;     //Member Management
+
+
+                }
+                else if(Session["role"].Equals("user"))
+                {
+
+                    lnkUserLogin.Visible = false; //USERLOGIN
+                    lnkSignUp.Visible = false;      //SignUP
+
+                    lnkLogout.Visible = true;      //LOGOUT
+                    lblHelloUser.Visible = true;     //HElloUser
+                    lblHelloUser.Text = "Hello  " + Session["username"].ToString();
+
+
+
+                    lnkAdminLogin.Visible = true;     //ADMIN LOGIN
+
+                    lnkPublisherMgmt.Visible = false;     //PublisherMgm
+                    lnkAuthorMgmt.Visible = false;     //lnkAuthorMgmt
+                    LinkButton1.Visible = false;     //Book Issue
+                    LinkButton2.Visible = false;     //Book Inventory
+                    LinkButton3.Visible = false;     //Member Management
+                }
+                else if (Session["role"].Equals("admin"))
+                {
+                    lnkUserLogin.Visible = false; //USERLOGIN
+                    lnkSignUp.Visible = false;      //SignUP
+
+                    lnkLogout.Visible = true;      //LOGOUT
+                    lblHelloUser.Visible = true;     //HElloUser
+                    lblHelloUser.Text = "Hello  ADMIN" ;
+
+
+
+                    lnkAdminLogin.Visible = false;     //ADMIN LOGIN
+
+                    lnkPublisherMgmt.Visible = true;     //PublisherMgm
+                    lnkAuthorMgmt.Visible = true;     //lnkAuthorMgmt
+                    LinkButton1.Visible = true;     //Book Issue
+                    LinkButton2.Visible = true;     //Book Inventory
+                    LinkButton3.Visible = true;     //Member Management
+                }
+            }
+            catch (Exception ex)
+            {
+            }
         }
 
         protected void lnkAdminLogin_Click(object sender, EventArgs e)
@@ -48,6 +111,31 @@ namespace ELibraryManagement
         {
             Response.Redirect("AdminMemberManagement.aspx");
 
+        }
+
+        protected void lnkLogout_Click(object sender, EventArgs e)
+        {
+
+            Session["username"] = "";
+            Session["fullname"] = "";
+            Session["role"] = "";
+            Session["status"] ="";
+
+            lnkUserLogin.Visible = true; //USERLOGIN
+            lnkSignUp.Visible = true;      //SignUP
+            lnkLogout.Visible = false;      //LOGOUT
+            lblHelloUser.Visible = false;     //HElloUser
+
+
+            lnkAdminLogin.Visible = true;     //ADMIN LOGIN
+
+            lnkPublisherMgmt.Visible = false;     //PublisherMgm
+            lnkAuthorMgmt.Visible = false;     //lnkAuthorMgmt
+            LinkButton1.Visible = false;     //Book Issue
+            LinkButton2.Visible = false;     //Book Inventory
+            LinkButton3.Visible = false;     //Member Management
+
+            Response.Redirect("homepage.aspx");
         }
     }
 }

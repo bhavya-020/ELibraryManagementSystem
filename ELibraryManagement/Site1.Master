@@ -83,7 +83,7 @@
                             <asp:LinkButton ID="lnkSignUp" runat="server" CssClass="nav-link">Sign Up</asp:LinkButton>
                         </li>
                         <li class="nav-item">
-                            <asp:LinkButton ID="lnkLogout" runat="server" CssClass="nav-link" Visible="False">Logout</asp:LinkButton>
+                            <asp:LinkButton ID="lnkLogout" runat="server" CssClass="nav-link" Visible="False" OnClick="lnkLogout_Click">Logout</asp:LinkButton>
                         </li>
                         <li class="nav-item">
                             <asp:Label ID="lblHelloUser" runat="server" CssClass="nav-link" Visible="False" Text="Hello, User!"></asp:Label>

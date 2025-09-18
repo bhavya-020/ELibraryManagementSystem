@@ -18,6 +18,9 @@
                         <div class="form-group mb-3">
                             <label for="txtAuthorId">Author ID</label>
                             <asp:TextBox ID="txtAuthorId" runat="server" CssClass="form-control" placeholder="Enter Author ID"></asp:TextBox>
+                            <div class="input-group-append">
+                                <asp:Button ID="btnGo" runat="server" Text="Go" CssClass="btn btn-primary"  OnClick="btnGo_Click" />
+                            </div>
                         </div>
 
                         <!-- Author Name -->
@@ -28,9 +31,9 @@
 
                         <!-- Buttons -->
                         <div class="d-flex justify-content-between">
-                            <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-success" />
-                            <asp:Button ID="btnUpdate" runat="server" Text="Update" CssClass="btn btn-warning" />
-                            <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-danger" />
+                            <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-success" OnClick="btnAdd_Click" />
+                            <asp:Button ID="btnUpdate" runat="server" Text="Update" CssClass="btn btn-warning" OnClick="btnUpdate_Click" />
+                            <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-danger" OnClick="btnDelete_Click" />
                         </div>
 
                         <asp:Label ID="lblMessage" runat="server" CssClass="d-block mt-3 text-danger"></asp:Label>

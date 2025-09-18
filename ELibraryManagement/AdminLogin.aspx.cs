@@ -38,8 +38,15 @@ namespace ELibraryManagement
                 {
                     while (dr.Read())
                     {
-                        Response.Write("<script>alert('" + dr.GetValue(0).ToString() + "');</script>");
+                        //Response.Write("<script>alert('" + dr.GetValue(0).ToString() + "');</script>");
+
+
+                        Session["username"] = dr.GetValue(0).ToString();
+                        Session["fullname"] = dr.GetValue(2).ToString();
+                        Session["role"] = "admin";
+                        //Session["status"] = dr.GetValue(10).ToString();
                     }
+                    Response.Redirect("homepage.aspx");
                 }
                 else
                 {

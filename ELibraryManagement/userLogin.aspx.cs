@@ -41,8 +41,15 @@ namespace ELibraryManagement
                 if (dr.HasRows)
                 {
                     while (dr.Read()) {
-                        Response.Write("<script>alert('"+dr.GetValue(0).ToString()+"');</script>");
+                        Response.Write("<script>alert('Login Successfull');</script>");
+                        Session["username"] = dr.GetValue(0).ToString();
+                        Session["fullname"] = dr.GetValue(1).ToString();
+                        Session["role"] = "user";
+                        Session["status"] = dr.GetValue(10).ToString();
+
+
                     }
+                    Response.Redirect("homepage.aspx");
                 }
                 else
                 {
