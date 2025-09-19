@@ -1,6 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="AdminAutherManagement.aspx.cs" Inherits="ELibraryManagement.AdminAutherManagement" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).DataTable();
+            //$('.tablel').DataTable();
+        });
+    </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -19,7 +27,7 @@
                             <label for="txtAuthorId">Author ID</label>
                             <asp:TextBox ID="txtAuthorId" runat="server" CssClass="form-control" placeholder="Enter Author ID"></asp:TextBox>
                             <div class="input-group-append">
-                                <asp:Button ID="btnGo" runat="server" Text="Go" CssClass="btn btn-primary"  OnClick="btnGo_Click" />
+                                <asp:Button ID="btnGo" runat="server" Text="Go" CssClass="btn btn-primary" OnClick="btnGo_Click" />
                             </div>
                         </div>
 
@@ -49,11 +57,16 @@
                     </div>
                     <div class="card-body">
 
+
                         <%-- OnPageIndexChanging="gvAuthors_PageIndexChanging"--%>
-                        <asp:GridView ID="gvAuthors" runat="server" CssClass="table table-striped table-bordered" AutoGenerateColumns="False" AllowPaging="True" PageSize="10">
+
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:elibraryDBConnectionString %>" ProviderName="<%$ ConnectionStrings:elibraryDBConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [author_master_tbl]"></asp:SqlDataSource>
+
+
+                        <asp:GridView ID="gvAuthors" runat="server" CssClass="table table-striped table-bordered" AutoGenerateColumns="False" AllowPaging="True" DataKeyNames="author_id" DataSourceID="SqlDataSource1">
                             <Columns>
-                                <asp:BoundField DataField="AuthorId" HeaderText="Author ID" />
-                                <asp:BoundField DataField="AuthorName" HeaderText="Author Name" />
+                                <asp:BoundField DataField="author_id" HeaderText="author_id" ReadOnly="True" SortExpression="author_id" />
+                                <asp:BoundField DataField="author_name" HeaderText="author_name" SortExpression="author_name" />
                             </Columns>
                         </asp:GridView>
                     </div>
