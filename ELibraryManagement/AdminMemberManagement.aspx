@@ -1,5 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="AdminMemberManagement.aspx.cs" Inherits="ELibraryManagement.AdminMemberManagement" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).DataTable();
+        //$('.tablel').DataTable();
+    });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -18,6 +26,8 @@
                             <div class="col-md-6 mb-3">
                                 <label>Member ID</label>
                                 <asp:TextBox ID="txtMemberId" runat="server" CssClass="form-control" placeholder="ID"></asp:TextBox>
+                                <asp:Button ID="Button4" CssClass="btn btn-secondary btn-md" runat="server" Text="Go" OnClick="Button4_Click1" />
+
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label>Full Name</label>
@@ -69,14 +79,16 @@
 
                         <!-- Activate / Deactivate Buttons -->
                         <div class="d-flex justify-content-between mb-3">
-                            <asp:Button ID="btnActivate" runat="server" Text="Activate" CssClass="btn btn-success" />
-                            <asp:Button ID="btnDeactivate" runat="server" Text="Deactivate" CssClass="btn btn-warning" />
+                            <asp:Button ID="btnActivate" runat="server" Text="Activate" CssClass="btn btn-success" OnClick="LinkButton1_Click"/>
+                            <asp:Button ID="btnPending" runat="server" Text="Pending" CssClass="btn btn-warning" OnClick="LinkButton2_Click"/>
+                            <asp:Button ID="btnDeactivate" runat="server" Text="Deactivate" CssClass="btn btn-warning"  OnClick="LinkButton3_Click"/>
                         </div>
 
                         <!-- Delete User -->
                         <div class="d-grid mb-3">
-                            <asp:Button ID="btnDelete" runat="server" Text="Delete Permanently" CssClass="btn btn-danger" />
+                            <asp:Button ID="btnDelete" runat="server" Text="Delete Permanently" CssClass="btn btn-danger" OnClick="btnDelete_Click" />
                         </div>
+
 
                         <asp:Label ID="lblMessage" runat="server" CssClass="d-block mt-2 text-danger"></asp:Label>
                     </div>
@@ -90,20 +102,21 @@
                         <h5>Member List</h5>
                     </div>
                     <div class="card-body">
-                        <asp:GridView ID="gvMembers" runat="server" CssClass="table table-striped table-bordered" AutoGenerateColumns="False">
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:elibraryDBConnectionString %>" SelectCommand="SELECT * FROM [member_master_tbl]"></asp:SqlDataSource>
+                        <div class ="col">
+                        <asp:GridView ID="gvMembers" runat="server" CssClass="table table-striped table-bordered" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="member_id">
                             <Columns>
-                                <asp:BoundField DataField="MemberId" HeaderText="ID" />
-                                <asp:BoundField DataField="FullName" HeaderText="Full Name" />
-                                <asp:BoundField DataField="DOB" HeaderText="DOB" />
-                                <asp:BoundField DataField="Contact" HeaderText="Contact" />
-                                <asp:BoundField DataField="Email" HeaderText="Email" />
-                                <asp:BoundField DataField="State" HeaderText="State" />
-                                <asp:BoundField DataField="City" HeaderText="City" />
-                                <asp:BoundField DataField="Pincode" HeaderText="Pincode" />
-                                <asp:BoundField DataField="Address" HeaderText="Address" />
-                                <asp:BoundField DataField="Status" HeaderText="Account Status" />
+                                <asp:BoundField DataField="member_id" HeaderText="id" ReadOnly="True" SortExpression="member_id" />
+                                <asp:BoundField DataField="full_name" HeaderText="Name" SortExpression="full_name" />
+                                <asp:BoundField DataField="account_status" HeaderText="account_status" SortExpression="account_status" />
+                                <asp:BoundField DataField="contact_no" HeaderText="contact_no" SortExpression="contact_no" />
+                                <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
+                                <asp:BoundField DataField="city" HeaderText="city" SortExpression="city" />
                             </Columns>
                         </asp:GridView>
+                           
+
+                        </div>
                     </div>
                 </div>
             </div>
