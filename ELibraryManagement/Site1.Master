@@ -73,7 +73,11 @@
 
 
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item active"><a href="ViewBooks.aspx"><asp:LinkButton ID="lnkViewBooks" runat="server" CssClass="nav-link">View Books</asp:LinkButton></a>
+                        <li class="nav-item active">
+                            <a href="ViewBooks.aspx">
+                                <asp:LinkButton href="ViewBooks.aspx" ID="lnkViewBooks" runat="server" CssClass="nav-link">View Books</asp:LinkButton>
+
+                            </a>
                             
                         </li>
                         <li class="nav-item">

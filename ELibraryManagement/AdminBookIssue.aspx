@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="AdminBookIssue.aspx.cs" Inherits="ELibraryManagement.AdminBookIssue" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -13,7 +14,7 @@
                         <h5>Book Issue / Return</h5>
                     </div>
                     <div class="card-body">
-                        
+
                         <!-- Member ID -->
                         <div class="form-group mb-3">
                             <label for="txtMemberId">Member ID</label>
@@ -26,11 +27,34 @@
                             <asp:TextBox ID="txtMemberName" runat="server" CssClass="form-control" placeholder="Enter Member Name"></asp:TextBox>
                         </div>
 
-                        <!-- Book ID -->
+                        <!-- Book ID
                         <div class="form-group mb-3">
                             <label for="txtBookId">Book ID</label>
                             <asp:TextBox ID="txtBookId" runat="server" CssClass="form-control" placeholder="Enter Book ID"></asp:TextBox>
                         </div>
+ -->
+
+                        <div class="form-group mb-3">
+                            <label for="txtBookId">Book ID</label>
+                            <asp:TextBox
+                                ID="txtBookId1"
+                                runat="server"
+                                CssClass="form-control"
+                                placeholder="Enter Book ID">
+                            </asp:TextBox>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <asp:Button
+                                ID="btnSearch"
+                                runat="server"
+                                Text="Search Book"
+                                CssClass="btn btn-primary"
+                                OnClick="btnSearch_Click" />
+                        </div>
+
+
+
 
                         <!-- Book Name -->
                         <div class="form-group mb-3">
@@ -52,8 +76,8 @@
 
                         <!-- Buttons -->
                         <div class="d-flex justify-content-between">
-                            <asp:Button ID="btnIssue" runat="server" Text="Issue" CssClass="btn btn-success"  />
-                            <asp:Button ID="btnReturn" runat="server" Text="Return" CssClass="btn btn-danger" />
+                            <asp:Button ID="btnIssue" runat="server" Text="Issue" CssClass="btn btn-success" OnClick="btnIssue_Click" />
+                            <asp:Button ID="btnReturn" runat="server" Text="Return" CssClass="btn btn-danger" OnClick="btnReturn_Click" />
                         </div>
 
                         <!-- Message -->
@@ -69,15 +93,17 @@
                     <div class="card-header bg-info text-white text-center">
                         <h5>Issued Books List</h5>
                     </div>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:elibraryDBConnectionString %>" SelectCommand="SELECT * FROM [book_issue_tbl]"></asp:SqlDataSource>
+
                     <div class="card-body">
-                        <asp:GridView ID="gvIssuedBooks" runat="server" CssClass="table table-striped table-bordered" AutoGenerateColumns="False">
+                        <asp:GridView ID="gvIssuedBooks" runat="server" CssClass="table table-striped table-bordered" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnRowDataBound="gvIssuedBooks_RowDataBound">
                             <Columns>
-                                <asp:BoundField DataField="MemberId" HeaderText="Member ID" />
-                                <asp:BoundField DataField="MemberName" HeaderText="Member Name" />
-                                <asp:BoundField DataField="BookId" HeaderText="Book ID" />
-                                <asp:BoundField DataField="BookName" HeaderText="Book Name" />
-                                <asp:BoundField DataField="IssueDate" HeaderText="Issue Date" />
-                                <asp:BoundField DataField="DueDate" HeaderText="Due Date" />
+                                <asp:BoundField DataField="member_id" HeaderText="member_id" SortExpression="member_id" />
+                                <asp:BoundField DataField="member_name" HeaderText="member_name" SortExpression="member_name" />
+                                <asp:BoundField DataField="book_id" HeaderText="book_id" SortExpression="book_id" />
+                                <asp:BoundField DataField="book_name" HeaderText="book_name" SortExpression="book_name" />
+                                <asp:BoundField DataField="issue_date" HeaderText="issue_date" SortExpression="issue_date" />
+                                <asp:BoundField DataField="due_date" HeaderText="due_date" SortExpression="due_date" />
                             </Columns>
                         </asp:GridView>
                     </div>

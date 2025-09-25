@@ -144,24 +144,24 @@ namespace ELibraryManagement
                     }
                     genres = genres.Remove(genres.Length - 1);
 
-                    string filepath = "~/book_inventory/books1";
-                    string filename = Path.GetFileName(FileUpload1.PostedFile.FileName);
-                    if (filename == "" || filename == null)
-                    {
-                        filepath = global_filepath;
+                    //string filepath = "~/book_inventory/books1";
+                    //string filename = Path.GetFileName(FileUpload1.PostedFile.FileName);
+                    //if (filename == "" || filename == null)
+                    //{
+                    //    filepath = global_filepath;
 
-                    }
-                    else
-                    {
-                        FileUpload1.SaveAs(Server.MapPath("book_inventory/" + filename));
-                        filepath = "~/book_inventory/" + filename;
-                    }
+                    //}
+                    //else
+                    //{
+                    //    FileUpload1.SaveAs(Server.MapPath("book_inventory/" + filename));
+                    //    filepath = "~/book_inventory/" + filename;
+                    //}
                     SqlConnection con = new SqlConnection(strcon);
                     if (con.State == ConnectionState.Closed)
                     {
                         con.Open();
                     }
-                    SqlCommand cmd = new SqlCommand("UPDATE book_master_tbl SET book_name=@book_name, genre=@genre, author_name=@author_name, publisher_name=@publisher_name, publish_date=@publish_date, language=@language, edition=@edition, book_cost=@book_cost, no_of_pages=@no_of_pages, book_description=@book_description, actual_stock=@actual_stock, current_stock=@current_stock, book_img_link=@book_img_link where book_id='" + TextBox1.Text.Trim() + "'", con);
+                    SqlCommand cmd = new SqlCommand("UPDATE book_master_tbl SET book_name=@book_name, genre=@genre, author_name=@author_name, publisher_name=@publisher_name, publish_date=@publish_date, language=@language, edition=@edition, book_cost=@book_cost, no_of_pages=@no_of_pages, book_description=@book_description, actual_stock=@actual_stock, current_stock=@current_stock, book_img_link=@book_img_link where book_id= @book_id ", con);
                     cmd.Parameters.AddWithValue("@book_id", TextBox1.Text.Trim());
                     cmd.Parameters.AddWithValue("@book_name", TextBox2.Text.Trim());
                     cmd.Parameters.AddWithValue("@genre", genres);
@@ -175,7 +175,7 @@ namespace ELibraryManagement
                     cmd.Parameters.AddWithValue("@book_description", TextBox11.Text.Trim());
                     cmd.Parameters.AddWithValue("@actual_stock", TextBox4.Text.Trim());
                     cmd.Parameters.AddWithValue("@current_stock", TextBox5.Text.Trim());
-                    cmd.Parameters.AddWithValue("@book_img_link", filepath);
+                    //cmd.Parameters.AddWithValue("@book_img_link", filepath);
                     cmd.ExecuteNonQuery();
                     con.Close();
                     GridView1.DataBind();
