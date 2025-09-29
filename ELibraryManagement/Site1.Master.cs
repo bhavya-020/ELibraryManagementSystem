@@ -137,5 +137,12 @@ namespace ELibraryManagement
 
             Response.Redirect("homepage.aspx");
         }
+
+
+protected void lblHelloUser_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("userprofile.aspx");
+
+        }
     }
 }

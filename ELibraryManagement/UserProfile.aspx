@@ -63,7 +63,7 @@
 
                         <!-- Update Profile Button -->
                         <div class="d-grid mb-4">
-                            <asp:Button ID="btnUpdateProfile" runat="server" CssClass="btn btn-primary" Text="Update Profile" />
+                            <asp:Button ID="btnUpdateProfile" runat="server" CssClass="btn btn-primary" onclick="btnUpdateProfile_Click" Text="Update Profile" />
                         </div>
 
                         <hr />
